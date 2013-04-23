@@ -4,8 +4,17 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" what is this?
-set number
+" --------------------------
+" MISC
+" --------------------------
+set linebreak
+set foldmethod=indent " more indent means a higher fold level
+set foldcolumn=2 " number of spaces used to indicates folds 
+set shiftwidth=2 " autoindent uses 2 spaces 
+set tabstop=2 " a tabstop is 2 spaces 
+set softtabstop=4 
+set sw=2
+set number " always show line numbers
 filetype plugin on
 filetype indent on
 
@@ -62,20 +71,9 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-" --------------------------
-" MISC
-" --------------------------
-set linebreak
-set foldmethod=indent 
-set foldcolumn=4 
-set shiftwidth=4 
-set tabstop=4 
-set softtabstop=4 
-set sw=2
+
 colorscheme koehler
 
 syntax on
 filetype on
-au BufNewFile,BufRead *.sdf set filetype=sdf
-au BufNewFile,BufRead *.str set filetype=stratego
 
